@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		D716CB331C21432C00D89B5C /* MMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = D716CB321C21432C00D89B5C /* MMDB.swift */; };
 		D716CB411C2269D200D89B5C /* maxminddb_unions.c in Sources */ = {isa = PBXBuildFile; fileRef = D716CB3F1C2269D200D89B5C /* maxminddb_unions.c */; };
-		D716CB4A1C23A58700D89B5C /* MMDB.h in Headers */ = {isa = PBXBuildFile; fileRef = D716CB491C23A58700D89B5C /* MMDB.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		D716CB571C23A5DC00D89B5C /* MMDB.h in Headers */ = {isa = PBXBuildFile; fileRef = D716CB561C23A5DC00D89B5C /* MMDB.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D716CB5C1C23A65200D89B5C /* maxminddb.c in Sources */ = {isa = PBXBuildFile; fileRef = D73CAECC1C21A7A2000C2132 /* maxminddb.c */; };
 		D716CB5D1C23A65200D89B5C /* maxminddb_unions.c in Sources */ = {isa = PBXBuildFile; fileRef = D716CB3F1C2269D200D89B5C /* maxminddb_unions.c */; };
 		D716CB5E1C23A65D00D89B5C /* MMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = D716CB321C21432C00D89B5C /* MMDB.swift */; };
@@ -50,11 +48,9 @@
 		D716CB3F1C2269D200D89B5C /* maxminddb_unions.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = maxminddb_unions.c; sourceTree = "<group>"; };
 		D716CB401C2269D200D89B5C /* maxminddb_unions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = maxminddb_unions.h; sourceTree = "<group>"; };
 		D716CB471C23A58700D89B5C /* MMDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MMDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D716CB491C23A58700D89B5C /* MMDB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMDB.h; sourceTree = "<group>"; };
-		D716CB4B1C23A58700D89B5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D716CB4B1C23A58700D89B5C /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
 		D716CB541C23A5DC00D89B5C /* MMDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MMDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D716CB561C23A5DC00D89B5C /* MMDB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMDB.h; sourceTree = "<group>"; };
-		D716CB581C23A5DC00D89B5C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D716CB581C23A5DC00D89B5C /* Info-OSX.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-OSX.plist"; sourceTree = "<group>"; };
 		D73CAECC1C21A7A2000C2132 /* maxminddb.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = maxminddb.c; sourceTree = "<group>"; };
 		D73CAECE1C21A7B0000C2132 /* maxminddb_config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = maxminddb_config.h; sourceTree = "<group>"; };
 		D73CAECF1C21A7B0000C2132 /* maxminddb.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = maxminddb.h; sourceTree = "<group>"; };
@@ -92,8 +88,6 @@
 			isa = PBXGroup;
 			children = (
 				D716CB311C21432C00D89B5C /* MMDB */,
-				D716CB481C23A58700D89B5C /* MMDB-iOS */,
-				D716CB551C23A5DC00D89B5C /* MMDB-OSX */,
 				D716CB301C21432C00D89B5C /* Products */,
 			);
 			sourceTree = "<group>";
@@ -121,26 +115,10 @@
 				D716CB401C2269D200D89B5C /* maxminddb_unions.h */,
 				D716CB3F1C2269D200D89B5C /* maxminddb_unions.c */,
 				D73CAED01C21AA9A000C2132 /* GeoLite2-Country.mmdb */,
+				D716CB4B1C23A58700D89B5C /* Info-iOS.plist */,
+				D716CB581C23A5DC00D89B5C /* Info-OSX.plist */,
 			);
 			path = MMDB;
-			sourceTree = "<group>";
-		};
-		D716CB481C23A58700D89B5C /* MMDB-iOS */ = {
-			isa = PBXGroup;
-			children = (
-				D716CB491C23A58700D89B5C /* MMDB.h */,
-				D716CB4B1C23A58700D89B5C /* Info.plist */,
-			);
-			path = "MMDB-iOS";
-			sourceTree = "<group>";
-		};
-		D716CB551C23A5DC00D89B5C /* MMDB-OSX */ = {
-			isa = PBXGroup;
-			children = (
-				D716CB561C23A5DC00D89B5C /* MMDB.h */,
-				D716CB581C23A5DC00D89B5C /* Info.plist */,
-			);
-			path = "MMDB-OSX";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,7 +128,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D716CB4A1C23A58700D89B5C /* MMDB.h in Headers */,
 				D736A9811C23B7D40070EAA3 /* maxminddb_config.h in Headers */,
 				D736A9821C23B7D40070EAA3 /* maxminddb-compat-util.h in Headers */,
 				D736A9831C23B7D40070EAA3 /* maxminddb.h in Headers */,
@@ -162,7 +139,6 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D716CB571C23A5DC00D89B5C /* MMDB.h in Headers */,
 				D736A9851C23B7E30070EAA3 /* maxminddb_config.h in Headers */,
 				D736A9861C23B7E30070EAA3 /* maxminddb-compat-util.h in Headers */,
 				D736A9871C23B7E30070EAA3 /* maxminddb.h in Headers */,
@@ -431,10 +407,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/MMDB-iOS/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/MMDB/Info-iOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_CFLAGS = MMDB_UINT128_IS_BYTE_ARRAY;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lexrus.MMDB-iOS";
 				PRODUCT_NAME = MMDB;
 				SDKROOT = iphoneos;
@@ -455,10 +432,11 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/MMDB-iOS/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/MMDB/Info-iOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				OTHER_CFLAGS = MMDB_UINT128_IS_BYTE_ARRAY;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lexrus.MMDB-iOS";
 				PRODUCT_NAME = MMDB;
 				SDKROOT = iphoneos;
@@ -481,10 +459,11 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = "MMDB-OSX/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/MMDB/Info-OSX.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				OTHER_CFLAGS = MMDB_UINT128_IS_BYTE_ARRAY;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lexrus.MMDB-OSX";
 				PRODUCT_NAME = MMDB;
 				SKIP_INSTALL = YES;
@@ -504,10 +483,11 @@
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				FRAMEWORK_VERSION = A;
-				INFOPLIST_FILE = "MMDB-OSX/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/MMDB/Info-OSX.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				OTHER_CFLAGS = MMDB_UINT128_IS_BYTE_ARRAY;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lexrus.MMDB-OSX";
 				PRODUCT_NAME = MMDB;
 				SKIP_INSTALL = YES;

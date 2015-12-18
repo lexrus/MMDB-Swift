@@ -22,8 +22,8 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/lexrus/MMDB-Swift.git",
                      :tag => s.version }
 
-  s.source_files  = "Sources/MMDB.swift", "MMDB/*.c"
-  s.public_header_files = "MMDB/*.h"
+  s.source_files  = "Sources/MMDB.swift", "MMDB/maxminddb*.{h,c}"
+  s.public_header_files = "MMDB/maxminddb*.h", "MMDB-iOS/MMDB.h"
 
   s.resource  = "MMDB/GeoLite2-Country.mmdb"
 
