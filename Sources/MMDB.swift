@@ -9,14 +9,14 @@
 import Foundation
 
 public struct MMDBContinent {
-    var code: String?
-    var names: [String: String]?
+    public var code: String?
+    public var names: [String: String]?
 }
 
 public struct MMDBCountry: CustomStringConvertible {
-    var continent = MMDBContinent()
-    var isoCode = ""
-    var names = [String: String]()
+    public var continent = MMDBContinent()
+    public var isoCode = ""
+    public var names = [String: String]()
 
     init(dictionary: NSDictionary) {
         if let dict = dictionary["continent"],
@@ -74,7 +74,7 @@ final public class MMDB {
     private typealias ListPtr = UnsafeMutablePointer<MMDB_entry_data_list_s>
     private typealias StringPtr = UnsafeMutablePointer<String>
 
-    public init?(_ filename: String) {
+    public init?(_ filename: String = "") {
         var cfilename = (filename as NSString).UTF8String
         var cfilenamePtr = UnsafePointer<Int8>(cfilename)
 
@@ -204,8 +204,8 @@ final public class MMDB {
         return JSONString
     }
 
-    public func lookup(someString: String) -> MMDBCountry? {
-        guard let s = lookupJSON(someString) else {
+    public func lookup(IPString: String) -> MMDBCountry? {
+        guard let s = lookupJSON(IPString) else {
             return nil
         }
 
