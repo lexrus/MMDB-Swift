@@ -29,4 +29,8 @@ Pod::Spec.new do |s|
 
   s.framework  = "Foundation"
   s.requires_arc = true
+
+  s.pod_target_xcconfig = {
+    'GCC_PREPROCESSOR_DEFINITIONS' => 'MMDB_UINT128_IS_BYTE_ARRAY'
+  }
 end
