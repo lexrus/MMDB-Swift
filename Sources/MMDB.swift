@@ -40,27 +40,27 @@ public struct MMDBCountry: CustomStringConvertible {
         s += "  \"continent\": {\n"
         s += "    \"code\": \"" + (self.continent.code ?? "") + "\",\n"
         s += "    \"names\": {\n"
-        var i = self.continent.names?.count ?? 0
-        self.continent.names?.forEach {
+        var i = continent.names?.count ?? 0
+        continent.names?.forEach {
             s += "      \""
                 + $0.0 + ": \""
                 + $0.1 + "\""
                 + (i > 1 ? "," : "")
                 + "\n"
-            i--
+            i -= 1
         }
         s += "    }\n"
         s += "  },\n"
         s += "  \"isoCode\": \"" + self.isoCode + "\",\n"
         s += "  \"names\": {\n"
-        i = self.names.count
-        self.names.forEach {
+        i = names.count
+        names.forEach {
             s += "    \""
                 + $0.0 + ": \""
                 + $0.1 + "\""
                 + (i > 1 ? "," : "")
                 + "\n"
-            i--
+            i -= 1
         }
         s += "  }\n}"
         return s
@@ -152,7 +152,7 @@ final public class MMDB {
 
                 list = list.memory.next
                 list = dumpList(list, toS: toS)
-                size--
+                size -= 1
             }
             toS.memory += "},"
             break
