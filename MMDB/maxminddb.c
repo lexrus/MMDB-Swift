@@ -1115,7 +1115,7 @@ int MMDB_read_node(MMDB_s *const mmdb, uint32_t node_number,
 LOCAL uint32_t data_section_offset_for_record(MMDB_s *const mmdb,
                                               uint64_t record)
 {
-    return record - mmdb->metadata.node_count - MMDB_DATA_SECTION_SEPARATOR;
+    return (uint32_t)record - mmdb->metadata.node_count - MMDB_DATA_SECTION_SEPARATOR;
 }
 
 int MMDB_get_value(MMDB_entry_s *const start,
@@ -1239,7 +1239,7 @@ LOCAL int lookup_path_in_array(const char *path_elem, MMDB_s *mmdb,
 
     int saved_errno = errno;
     errno = 0;
-    int array_index = strtol(path_elem, &first_invalid, 10);
+    long array_index = strtol(path_elem, &first_invalid, 10);
     if (array_index < 0 || ERANGE == errno) {
         errno = saved_errno;
         return MMDB_INVALID_LOOKUP_PATH_ERROR;

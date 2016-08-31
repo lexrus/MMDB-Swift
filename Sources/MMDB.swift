@@ -19,16 +19,16 @@ public struct MMDBCountry: CustomStringConvertible {
     public var names = [String: String]()
 
     init(dictionary: NSDictionary) {
-        if let dict = dictionary["continent"],
-            code = dict["code"] as? String,
-            continentNames = dict["names"] as? [String: String]
+        if let dict = dictionary["continent"] as? NSDictionary,
+            let code = dict["code"] as? String,
+            let continentNames = dict["names"] as? [String: String]
         {
             continent.code = code
             continent.names = continentNames
         }
-        if let dict = dictionary["country"],
-            iso = dict["iso_code"] as? String,
-            countryNames = dict["names"] as? [String: String]
+        if let dict = dictionary["country"] as? NSDictionary,
+            let iso = dict["iso_code"] as? String,
+            let countryNames = dict["names"] as? [String: String]
         {
             self.isoCode = iso
             self.names = countryNames
@@ -43,10 +43,10 @@ public struct MMDBCountry: CustomStringConvertible {
         var i = continent.names?.count ?? 0
         continent.names?.forEach {
             s += "      \""
-                + $0.0 + ": \""
-                + $0.1 + "\""
-                + (i > 1 ? "," : "")
-                + "\n"
+            s += $0.0 + ": \""
+            s += $0.1 + "\""
+            s += (i > 1 ? "," : "")
+            s += "\n"
             i -= 1
         }
         s += "    }\n"
@@ -56,10 +56,10 @@ public struct MMDBCountry: CustomStringConvertible {
         i = names.count
         names.forEach {
             s += "    \""
-                + $0.0 + ": \""
-                + $0.1 + "\""
-                + (i > 1 ? "," : "")
-                + "\n"
+            s += $0.0 + ": \""
+            s += $0.1 + "\""
+            s += (i > 1 ? "," : "")
+            s += "\n"
             i -= 1
         }
         s += "  }\n}"
@@ -69,36 +69,36 @@ public struct MMDBCountry: CustomStringConvertible {
 
 final public class MMDB {
 
-    private var db = MMDB_s()
+    fileprivate var db = MMDB_s()
 
-    private typealias ListPtr = UnsafeMutablePointer<MMDB_entry_data_list_s>
-    private typealias StringPtr = UnsafeMutablePointer<String>
+    fileprivate typealias ListPtr = UnsafeMutablePointer<MMDB_entry_data_list_s>
+    fileprivate typealias StringPtr = UnsafeMutablePointer<String>
 
     public init?(_ filename: String = "") {
-        var cfilename = (filename as NSString).UTF8String
+        var cfilename = (filename as NSString).utf8String
         var cfilenamePtr = UnsafePointer<Int8>(cfilename)
 
         var status = MMDB_open(cfilenamePtr, UInt32(MMDB_MODE_MASK), &db)
         if status != MMDB_SUCCESS {
-            print(String.fromCString(MMDB_strerror(errno)))
+            print(String(cString: MMDB_strerror(errno)))
             // Failover to db in bundle
-            let bundle = NSBundle(forClass: MMDB.self)
+            let bundle = Bundle(for: MMDB.self)
             guard let path =
-                bundle.pathForResource("GeoLite2-Country", ofType: "mmdb") else {
+                bundle.path(forResource: "GeoLite2-Country", ofType: "mmdb") else {
                     return nil
             }
-            cfilename = (path as NSString).UTF8String
+            cfilename = (path as NSString).utf8String
             cfilenamePtr = UnsafePointer<Int8>(cfilename)
             status = MMDB_open(cfilenamePtr, UInt32(MMDB_MODE_MASK), &db)
             if status != MMDB_SUCCESS {
-                print(String.fromCString(MMDB_strerror(errno)))
+                print(String(cString: MMDB_strerror(errno)))
                 return nil
             }
         }
     }
 
-    private func lookupString(s: String) -> MMDB_lookup_result_s? {
-        let string = (s as NSString).UTF8String
+    fileprivate func lookupString(_ s: String) -> MMDB_lookup_result_s? {
+        let string = (s as NSString).utf8String
         let stringPtr = UnsafePointer<Int8>(string)
 
         var gaiError: Int32 = 0
@@ -112,8 +112,8 @@ final public class MMDB {
     }
 
 
-    private func getString(list: ListPtr) -> String {
-        var data = list.memory.entry_data
+    fileprivate func getString(_ list: ListPtr) -> String {
+        var data = list.pointee.entry_data
         let type = (Int32)(data.type)
 
         // Ignore other useless keys
@@ -124,67 +124,75 @@ final public class MMDB {
         let str = MMDB_get_entry_data_char(&data)
         let size = size_t(data.data_size)
         let cKey = mmdb_strndup(str, size)
-        let key = String.fromCString(cKey)
+        let key = String(cString: cKey!)
         free(cKey)
 
-        return key ?? ""
+        return key
     }
 
-    private func getType(list: ListPtr) -> Int32 {
-        let data = list.memory.entry_data
+    fileprivate func getType(_ list: ListPtr) -> Int32 {
+        let data = list.pointee.entry_data
         return (Int32)(data.type)
     }
 
-    private func getSize(list: ListPtr) -> UInt32 {
-        return list.memory.entry_data.data_size
+    fileprivate func getSize(_ list: ListPtr) -> UInt32 {
+        return list.pointee.entry_data.data_size
     }
 
-    private func dumpList(var list: ListPtr, toS: StringPtr) -> ListPtr {
-        switch getType(list) {
+    private func dumpList(_ list: ListPtr?, toS: StringPtr) -> ListPtr? {
+        var list = list
+        switch getType(list!) {
 
         case MMDB_DATA_TYPE_MAP:
-            toS.memory += "{\n"
-            var size = getSize(list)
+            toS.pointee += "{\n"
+            var size = getSize(list!)
 
-            list = list.memory.next
+            list = list?.pointee.next
             while size != 0 && list != nil {
-                toS.memory += "\"" + getString(list) + "\":"
+                toS.pointee += "\"" + getString(list!) + "\":"
 
-                list = list.memory.next
+                list = list?.pointee.next
                 list = dumpList(list, toS: toS)
                 size -= 1
             }
-            toS.memory += "},"
+            toS.pointee += "},"
             break
 
         case MMDB_DATA_TYPE_UTF8_STRING:
-            toS.memory += "\"" + getString(list) + "\","
-            list = list.memory.next
+            toS.pointee += "\"" + getString(list!) + "\","
+            list = list?.pointee.next
             break
 
         case MMDB_DATA_TYPE_UINT32:
-            toS.memory += String(
-                format: "%u",
-                MMDB_get_entry_data_uint32(&list.memory.entry_data)
-                ) + ","
-            list = list.memory.next
+            if let entryData = list?.pointee.entry_data {
+                var mutableEntryData = entryData
+                if let uint = MMDB_get_entry_data_uint32(&mutableEntryData) {
+                toS.pointee += String(
+                    format: "%u",
+                    uint
+                    ) + ","
+                }
+            }
+            list = list?.pointee.next
             break
 
-        default:
-            ()
+        default: ()
 
         }
-
-        return list
+        
+        if let list = list {
+            return list
+        }
+        return nil
     }
 
-    private func lookupJSON(s: String) -> String? {
+    fileprivate func lookupJSON(_ s: String) -> String? {
         guard let result = lookupString(s) else {
             return nil
         }
 
         var entry = result.entry
-        var list = ListPtr()
+        var list: ListPtr?
 
         let status = MMDB_get_entry_data_list(&entry, &list)
         if status != MMDB_SUCCESS {
@@ -192,11 +200,11 @@ final public class MMDB {
         }
 
         var JSONString = ""
-        dumpList(list, toS: &JSONString)
+        _ = dumpList(list, toS: &JSONString)
 
-        JSONString = JSONString.stringByReplacingOccurrencesOfString(
-            "},},},",
-            withString: "}}}"
+        JSONString = JSONString.replacingOccurrences(
+            of: "},},},",
+            with: "}}}"
         )
 
         MMDB_free_entry_data_list(list)
@@ -204,18 +212,18 @@ final public class MMDB {
         return JSONString
     }
 
-    public func lookup(IPString: String) -> MMDBCountry? {
+    public func lookup(_ IPString: String) -> MMDBCountry? {
         guard let s = lookupJSON(IPString) else {
             return nil
         }
 
-        guard let data = s.dataUsingEncoding(NSUTF8StringEncoding) else {
+        guard let data = s.data(using: String.Encoding.utf8) else {
             return nil
         }
 
-        let JSON = try? NSJSONSerialization.JSONObjectWithData(
-            data,
-            options: NSJSONReadingOptions.AllowFragments)
+        let JSON = try? JSONSerialization.jsonObject(
+            with: data,
+            options: JSONSerialization.ReadingOptions.allowFragments)
 
         guard let dict = JSON as? NSDictionary else {
             return nil
