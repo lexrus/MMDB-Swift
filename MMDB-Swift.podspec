@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "MMDB-Swift"
-  s.version      = "0.0.1"
+  s.version      = "0.2.0"
   s.summary      = "A wrapper for MaxMind DB"
   s.description  = <<-DESC
                    A tiny wrapper for libmaxminddb which allows you to lookup
@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, :osx
 
   s.ios.deployment_target = "8.0"
-  s.osx.deployment_target = "10.9"
+  s.osx.deployment_target = "10.10"
 
   s.source       = { :git => "https://github.com/lexrus/MMDB-Swift.git",
                      :tag => s.version }

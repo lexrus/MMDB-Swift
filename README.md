@@ -1,6 +1,6 @@
 # MMDB-Swift
 
-[![CI Status](http://img.shields.io/travis/lexrus/MMDB-Swift.svg?style=flat)](https://travis-ci.org/lexrus/MMDB-Swift)
+![Language](https://img.shields.io/badge/language-Swift%203.0-orange.svg)
 [![Version](https://img.shields.io/cocoapods/v/MMDB-Swift.svg?style=flat)](http://cocoapods.org/pods/MMDB-Swift)
 [![Carthage Compatible](https://img.shields.io/badge/Carthage-✓-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 ![Platform](https://img.shields.io/badge/platform-iOS%7COSX%7CLinux-lightgrey.svg)
