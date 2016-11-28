@@ -9,11 +9,7 @@
 import Foundation
 
 func main(_ arguments: [String]) {
-    guard let HOME = ProcessInfo.processInfo.environment["HOME"] else {
-        return
-    }
-    
-    guard let db = MMDB("\(HOME)/Desktop/GeoLite2-Country.mmdb") else {
+    guard let db = MMDB("/tmp/GeoLite2-Country.mmdb") else {
         print("failed to open db.")
         return
     }

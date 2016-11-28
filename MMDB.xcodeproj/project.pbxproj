@@ -29,17 +29,19 @@
 		D736A98B1C23DD280070EAA3 /* MMDB.h in Headers */ = {isa = PBXBuildFile; fileRef = D736A9891C23DD190070EAA3 /* MMDB.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D73CAECD1C21A7A2000C2132 /* maxminddb.c in Sources */ = {isa = PBXBuildFile; fileRef = D73CAECC1C21A7A2000C2132 /* maxminddb.c */; };
 		D73CAED31C21AB0E000C2132 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = D73CAED21C21AB0E000C2132 /* main.swift */; };
+		D7E6EF0D1DEBD15C0067CB5F /* GeoLite2-Country.mmdb in CopyFiles */ = {isa = PBXBuildFile; fileRef = D73CAED01C21AA9A000C2132 /* GeoLite2-Country.mmdb */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		D716CB2D1C21432C00D89B5C /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 6;
+			buildActionMask = 12;
+			dstPath = /tmp;
+			dstSubfolderSpec = 0;
 			files = (
+				D7E6EF0D1DEBD15C0067CB5F /* GeoLite2-Country.mmdb in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
