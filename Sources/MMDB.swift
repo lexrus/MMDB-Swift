@@ -74,26 +74,23 @@ final public class MMDB {
     fileprivate typealias ListPtr = UnsafeMutablePointer<MMDB_entry_data_list_s>
     fileprivate typealias StringPtr = UnsafeMutablePointer<String>
 
-    public init?(_ filename: String = "") {
-        var cfilename = (filename as NSString).utf8String
-        var cfilenamePtr = UnsafePointer<Int8>(cfilename)
+    public init?(_ filename: String? = nil) {
+        if let filename = filename, openDB(atPath: filename) { return }
 
-        var status = MMDB_open(cfilenamePtr, UInt32(MMDB_MODE_MASK), &db)
+        let path = Bundle(for: MMDB.self).path(forResource: "GeoLite2-Country", ofType: "mmdb")
+        if let path = path, openDB(atPath: path) { return }
+
+        return nil
+    }
+    private func openDB(atPath: String) -> Bool {
+        let cfilename = (atPath as NSString).utf8String
+        let cfilenamePtr = UnsafePointer<Int8>(cfilename)
+        let status = MMDB_open(cfilenamePtr, UInt32(MMDB_MODE_MASK), &db)
         if status != MMDB_SUCCESS {
             print(String(cString: MMDB_strerror(errno)))
-            // Failover to db in bundle
-            let bundle = Bundle(for: MMDB.self)
-            guard let path =
-                bundle.path(forResource: "GeoLite2-Country", ofType: "mmdb") else {
-                    return nil
-            }
-            cfilename = (path as NSString).utf8String
-            cfilenamePtr = UnsafePointer<Int8>(cfilename)
-            status = MMDB_open(cfilenamePtr, UInt32(MMDB_MODE_MASK), &db)
-            if status != MMDB_SUCCESS {
-                print(String(cString: MMDB_strerror(errno)))
-                return nil
-            }
+            return false
+        } else {
+            return true
         }
     }
 
