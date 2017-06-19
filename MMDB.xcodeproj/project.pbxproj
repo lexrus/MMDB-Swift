@@ -218,7 +218,7 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0800;
-				ORGANIZATIONNAME = LexTang.com;
+				ORGANIZATIONNAME = lexrus.com;
 				TargetAttributes = {
 					D716CB2E1C21432C00D89B5C = {
 						CreatedOnToolsVersion = 7.2;

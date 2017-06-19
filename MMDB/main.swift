@@ -3,7 +3,7 @@
 //  tc
 //
 //  Created by Lex on 12/16/15.
-//  Copyright © 2015 LexTang.com. All rights reserved.
+//  Copyright © 2017 lexrus.com. All rights reserved.
 //
 
 import Foundation
