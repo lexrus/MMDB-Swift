@@ -6,12 +6,9 @@
 #define MMDB_UINT128_USING_MODE 0
 #endif
 
-/* Define as 1 if we don't have an unsigned __int128 type */
 #ifndef MMDB_UINT128_IS_BYTE_ARRAY
-#import "TargetConditionals.h"
-#if TARGET_OS_IPHONE
-#define MMDB_UINT128_IS_BYTE_ARRAY 1
-#endif
+/* Define as 1 if we don't have an unsigned __int128 type */
+#undef MMDB_UINT128_IS_BYTE_ARRAY
 #endif
 
 #endif                          /* MAXMINDDB_CONFIG_H */
