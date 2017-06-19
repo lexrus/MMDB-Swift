@@ -72,26 +72,26 @@ This outputs:
   "continent": {
     "code": "NA",
     "names": {
-      "ja: "北アメリカ",
-      "en: "North America",
-      "ru: "Северная Америка",
-      "es: "Norteamérica",
-      "pt-BR: "América do Norte",
-      "de: "Nordamerika",
-      "zh-CN: "北美洲",
-      "fr: "Amérique du Nord"
+      "ja": "北アメリカ",
+      "en": "North America",
+      "ru": "Северная Америка",
+      "es": "Norteamérica",
+      "de": "Nordamerika",
+      "zh-CN": "北美洲",
+      "fr": "Amérique du Nord",
+      "pt-BR": "América do Norte"
     }
   },
   "isoCode": "US",
   "names": {
-    "ja: "アメリカ合衆国",
-    "en: "United States",
-    "ru: "США",
-    "es: "Estados Unidos",
-    "pt-BR: "Estados Unidos",
-    "de: "USA",
-    "zh-CN: "美国",
-    "fr: "États-Unis"
+    "ja": "アメリカ合衆国",
+    "en": "United States",
+    "ru": "США",
+    "es": "Estados Unidos",
+    "de": "USA",
+    "zh-CN": "美国",
+    "fr": "États-Unis",
+    "pt-BR": "Estados Unidos"
   }
 }
 ```

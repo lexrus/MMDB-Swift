@@ -62,6 +62,9 @@
 		D73CAED01C21AA9A000C2132 /* GeoLite2-Country.mmdb */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GeoLite2-Country.mmdb"; sourceTree = "<group>"; };
 		D73CAED11C21AAEA000C2132 /* maxminddb-compat-util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "maxminddb-compat-util.h"; sourceTree = "<group>"; };
 		D73CAED21C21AB0E000C2132 /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		D77179AE1EF800B300E25F23 /* MMDB-Swift.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = "MMDB-Swift.podspec"; sourceTree = "<group>"; };
+		D77179AF1EF800B300E25F23 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		D77179B01EF800B300E25F23 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +95,9 @@
 		D716CB261C21432C00D89B5C = {
 			isa = PBXGroup;
 			children = (
+				D77179AE1EF800B300E25F23 /* MMDB-Swift.podspec */,
+				D77179AF1EF800B300E25F23 /* Package.swift */,
+				D77179B01EF800B300E25F23 /* README.md */,
 				D716CB311C21432C00D89B5C /* MMDB */,
 				D716CB301C21432C00D89B5C /* Products */,
 			);

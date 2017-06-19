@@ -43,7 +43,7 @@ public struct MMDBCountry: CustomStringConvertible {
         var i = continent.names?.count ?? 0
         continent.names?.forEach {
             s += "      \""
-            s += $0.0 + ": \""
+            s += $0.0 + "\": \""
             s += $0.1 + "\""
             s += (i > 1 ? "," : "")
             s += "\n"
@@ -56,7 +56,7 @@ public struct MMDBCountry: CustomStringConvertible {
         i = names.count
         names.forEach {
             s += "    \""
-            s += $0.0 + ": \""
+            s += $0.0 + "\": \""
             s += $0.1 + "\""
             s += (i > 1 ? "," : "")
             s += "\n"
