@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "MMDB-Swift"
-  s.version      = "0.2.3"
+  s.version      = "0.2.4"
   s.summary      = "A wrapper for MaxMind DB"
   s.description  = <<-DESC
                    A tiny wrapper for libmaxminddb which allows you to lookup
