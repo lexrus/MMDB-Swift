@@ -5,10 +5,15 @@ set -e
 echo "Updating GeoIP database."
 
 tmpfile=$(mktemp)
+tmpdir=$(mktemp -d)
 
 curl -o $tmpfile http://geolite.maxmind.com/download/geoip/database/GeoLite2-Country.tar.gz
 
-gzcat $tmpfile > $(dirname $0)/MMDB/GeoLite2-Country.mmdb
+tar -xzf $tmpfile -C $tmpdir
+
+find $tmpdir -type f -exec mv {} $tmpdir \;
+
+mv $tmpdir/GeoLite2-Country.mmdb $(dirname $0)/MMDB/
 
 echo "Updated GeoIP database."
 

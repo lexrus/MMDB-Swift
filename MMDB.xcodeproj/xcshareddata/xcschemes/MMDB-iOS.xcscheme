@@ -20,6 +20,20 @@
                ReferencedContainer = "container:MMDB.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "366F5FE31F052F7F00DE3883"
+               BuildableName = "MMDBTests-iOS.xctest"
+               BlueprintName = "MMDBTests-iOS"
+               ReferencedContainer = "container:MMDB.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -28,7 +42,26 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "366F5FE31F052F7F00DE3883"
+               BuildableName = "MMDBTests-iOS.xctest"
+               BlueprintName = "MMDBTests-iOS"
+               ReferencedContainer = "container:MMDB.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
+      <MacroExpansion>
+         <BuildableReference
+            BuildableIdentifier = "primary"
+            BlueprintIdentifier = "D716CB461C23A58700D89B5C"
+            BuildableName = "MMDB.framework"
+            BlueprintName = "MMDB-iOS"
+            ReferencedContainer = "container:MMDB.xcodeproj">
+         </BuildableReference>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </TestAction>

@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		366F5FE71F052F7F00DE3883 /* MMDBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366F5FE61F052F7F00DE3883 /* MMDBTests.swift */; };
+		366F5FE91F052F7F00DE3883 /* MMDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D716CB471C23A58700D89B5C /* MMDB.framework */; };
+		366F5FF81F05301400DE3883 /* MMDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D716CB541C23A5DC00D89B5C /* MMDB.framework */; };
+		366F5FFE1F05302300DE3883 /* MMDBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366F5FE61F052F7F00DE3883 /* MMDBTests.swift */; };
 		D716CB331C21432C00D89B5C /* MMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = D716CB321C21432C00D89B5C /* MMDB.swift */; };
 		D716CB411C2269D200D89B5C /* maxminddb_unions.c in Sources */ = {isa = PBXBuildFile; fileRef = D716CB3F1C2269D200D89B5C /* maxminddb_unions.c */; };
 		D716CB5C1C23A65200D89B5C /* maxminddb.c in Sources */ = {isa = PBXBuildFile; fileRef = D73CAECC1C21A7A2000C2132 /* maxminddb.c */; };
@@ -32,6 +36,23 @@
 		D7E6EF0D1DEBD15C0067CB5F /* GeoLite2-Country.mmdb in CopyFiles */ = {isa = PBXBuildFile; fileRef = D73CAED01C21AA9A000C2132 /* GeoLite2-Country.mmdb */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		366F5FEA1F052F7F00DE3883 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D716CB271C21432C00D89B5C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D716CB461C23A58700D89B5C;
+			remoteInfo = "MMDB-iOS";
+		};
+		366F5FF91F05301400DE3883 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D716CB271C21432C00D89B5C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D716CB531C23A5DC00D89B5C;
+			remoteInfo = "MMDB-OSX";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		D716CB2D1C21432C00D89B5C /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -46,8 +67,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		366F5FE41F052F7F00DE3883 /* MMDBTests-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MMDBTests-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		366F5FE61F052F7F00DE3883 /* MMDBTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMDBTests.swift; sourceTree = "<group>"; };
+		366F5FE81F052F7F00DE3883 /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
+		366F5FF31F05301400DE3883 /* MMDBTests-OSX.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "MMDBTests-OSX.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		366F5FF71F05301400DE3883 /* Info-OSX.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-OSX.plist"; sourceTree = "<group>"; };
 		D716CB2F1C21432C00D89B5C /* MMDBDemo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = MMDBDemo; sourceTree = BUILT_PRODUCTS_DIR; };
-		D716CB321C21432C00D89B5C /* MMDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MMDB.swift; path = ../Sources/MMDB.swift; sourceTree = "<group>"; };
+		D716CB321C21432C00D89B5C /* MMDB.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMDB.swift; sourceTree = "<group>"; };
 		D716CB3B1C21437F00D89B5C /* MMDB-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MMDB-Bridging-Header.h"; sourceTree = "<group>"; };
 		D716CB3F1C2269D200D89B5C /* maxminddb_unions.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = maxminddb_unions.c; sourceTree = "<group>"; };
 		D716CB401C2269D200D89B5C /* maxminddb_unions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = maxminddb_unions.h; sourceTree = "<group>"; };
@@ -55,7 +81,7 @@
 		D716CB4B1C23A58700D89B5C /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
 		D716CB541C23A5DC00D89B5C /* MMDB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = MMDB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D716CB581C23A5DC00D89B5C /* Info-OSX.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-OSX.plist"; sourceTree = "<group>"; };
-		D736A9891C23DD190070EAA3 /* MMDB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = MMDB.h; path = ../Sources/MMDB.h; sourceTree = "<group>"; };
+		D736A9891C23DD190070EAA3 /* MMDB.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MMDB.h; sourceTree = "<group>"; };
 		D73CAECC1C21A7A2000C2132 /* maxminddb.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = maxminddb.c; sourceTree = "<group>"; };
 		D73CAECE1C21A7B0000C2132 /* maxminddb_config.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = maxminddb_config.h; sourceTree = "<group>"; };
 		D73CAECF1C21A7B0000C2132 /* maxminddb.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = maxminddb.h; sourceTree = "<group>"; };
@@ -68,6 +94,22 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		366F5FE11F052F7F00DE3883 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				366F5FE91F052F7F00DE3883 /* MMDB.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		366F5FF01F05301400DE3883 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				366F5FF81F05301400DE3883 /* MMDB.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D716CB2C1C21432C00D89B5C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -92,14 +134,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		366F5FE51F052F7F00DE3883 /* MMDBTests */ = {
+			isa = PBXGroup;
+			children = (
+				366F5FF71F05301400DE3883 /* Info-OSX.plist */,
+				366F5FE81F052F7F00DE3883 /* Info-iOS.plist */,
+				366F5FE61F052F7F00DE3883 /* MMDBTests.swift */,
+			);
+			path = MMDBTests;
+			sourceTree = "<group>";
+		};
 		D716CB261C21432C00D89B5C = {
 			isa = PBXGroup;
 			children = (
+				D716CB311C21432C00D89B5C /* MMDB */,
+				366F5FE51F052F7F00DE3883 /* MMDBTests */,
+				D716CB301C21432C00D89B5C /* Products */,
 				D77179AE1EF800B300E25F23 /* MMDB-Swift.podspec */,
 				D77179AF1EF800B300E25F23 /* Package.swift */,
 				D77179B01EF800B300E25F23 /* README.md */,
-				D716CB311C21432C00D89B5C /* MMDB */,
-				D716CB301C21432C00D89B5C /* Products */,
 			);
 			sourceTree = "<group>";
 		};
@@ -109,6 +162,8 @@
 				D716CB2F1C21432C00D89B5C /* MMDBDemo */,
 				D716CB471C23A58700D89B5C /* MMDB.framework */,
 				D716CB541C23A5DC00D89B5C /* MMDB.framework */,
+				366F5FE41F052F7F00DE3883 /* MMDBTests-iOS.xctest */,
+				366F5FF31F05301400DE3883 /* MMDBTests-OSX.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -116,19 +171,19 @@
 		D716CB311C21432C00D89B5C /* MMDB */ = {
 			isa = PBXGroup;
 			children = (
-				D73CAED21C21AB0E000C2132 /* main.swift */,
+				D73CAED01C21AA9A000C2132 /* GeoLite2-Country.mmdb */,
+				D716CB581C23A5DC00D89B5C /* Info-OSX.plist */,
+				D716CB4B1C23A58700D89B5C /* Info-iOS.plist */,
+				D716CB3B1C21437F00D89B5C /* MMDB-Bridging-Header.h */,
 				D736A9891C23DD190070EAA3 /* MMDB.h */,
 				D716CB321C21432C00D89B5C /* MMDB.swift */,
-				D716CB3B1C21437F00D89B5C /* MMDB-Bridging-Header.h */,
-				D73CAECC1C21A7A2000C2132 /* maxminddb.c */,
-				D73CAECE1C21A7B0000C2132 /* maxminddb_config.h */,
+				D73CAED21C21AB0E000C2132 /* main.swift */,
 				D73CAED11C21AAEA000C2132 /* maxminddb-compat-util.h */,
+				D73CAECC1C21A7A2000C2132 /* maxminddb.c */,
 				D73CAECF1C21A7B0000C2132 /* maxminddb.h */,
-				D716CB401C2269D200D89B5C /* maxminddb_unions.h */,
+				D73CAECE1C21A7B0000C2132 /* maxminddb_config.h */,
 				D716CB3F1C2269D200D89B5C /* maxminddb_unions.c */,
-				D73CAED01C21AA9A000C2132 /* GeoLite2-Country.mmdb */,
-				D716CB4B1C23A58700D89B5C /* Info-iOS.plist */,
-				D716CB581C23A5DC00D89B5C /* Info-OSX.plist */,
+				D716CB401C2269D200D89B5C /* maxminddb_unions.h */,
 			);
 			path = MMDB;
 			sourceTree = "<group>";
@@ -163,6 +218,42 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		366F5FE31F052F7F00DE3883 /* MMDBTests-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 366F5FEE1F052F7F00DE3883 /* Build configuration list for PBXNativeTarget "MMDBTests-iOS" */;
+			buildPhases = (
+				366F5FE01F052F7F00DE3883 /* Sources */,
+				366F5FE11F052F7F00DE3883 /* Frameworks */,
+				366F5FE21F052F7F00DE3883 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				366F5FEB1F052F7F00DE3883 /* PBXTargetDependency */,
+			);
+			name = "MMDBTests-iOS";
+			productName = MMDBTests;
+			productReference = 366F5FE41F052F7F00DE3883 /* MMDBTests-iOS.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		366F5FF21F05301400DE3883 /* MMDBTests-OSX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 366F5FFB1F05301400DE3883 /* Build configuration list for PBXNativeTarget "MMDBTests-OSX" */;
+			buildPhases = (
+				366F5FEF1F05301400DE3883 /* Sources */,
+				366F5FF01F05301400DE3883 /* Frameworks */,
+				366F5FF11F05301400DE3883 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				366F5FFA1F05301400DE3883 /* PBXTargetDependency */,
+			);
+			name = "MMDBTests-OSX";
+			productName = "MMDBTests-OSX";
+			productReference = 366F5FF31F05301400DE3883 /* MMDBTests-OSX.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		D716CB2E1C21432C00D89B5C /* MMDBDemo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D716CB361C21432C00D89B5C /* Build configuration list for PBXNativeTarget "MMDBDemo" */;
@@ -224,10 +315,18 @@
 		D716CB271C21432C00D89B5C /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0720;
+				LastSwiftUpdateCheck = 0830;
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = lexrus.com;
 				TargetAttributes = {
+					366F5FE31F052F7F00DE3883 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+					};
+					366F5FF21F05301400DE3883 = {
+						CreatedOnToolsVersion = 8.3.2;
+						ProvisioningStyle = Automatic;
+					};
 					D716CB2E1C21432C00D89B5C = {
 						CreatedOnToolsVersion = 7.2;
 						LastSwiftMigration = 0800;
@@ -257,11 +356,27 @@
 				D716CB2E1C21432C00D89B5C /* MMDBDemo */,
 				D716CB461C23A58700D89B5C /* MMDB-iOS */,
 				D716CB531C23A5DC00D89B5C /* MMDB-OSX */,
+				366F5FE31F052F7F00DE3883 /* MMDBTests-iOS */,
+				366F5FF21F05301400DE3883 /* MMDBTests-OSX */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		366F5FE21F052F7F00DE3883 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		366F5FF11F05301400DE3883 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D716CB451C23A58700D89B5C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -310,6 +425,22 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		366F5FE01F052F7F00DE3883 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				366F5FE71F052F7F00DE3883 /* MMDBTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		366F5FEF1F05301400DE3883 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				366F5FFE1F05302300DE3883 /* MMDBTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		D716CB2B1C21432C00D89B5C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -343,7 +474,89 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		366F5FEB1F052F7F00DE3883 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D716CB461C23A58700D89B5C /* MMDB-iOS */;
+			targetProxy = 366F5FEA1F052F7F00DE3883 /* PBXContainerItemProxy */;
+		};
+		366F5FFA1F05301400DE3883 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D716CB531C23A5DC00D89B5C /* MMDB-OSX */;
+			targetProxy = 366F5FF91F05301400DE3883 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		366F5FEC1F052F7F00DE3883 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "MMDBTests/Info-iOS.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lexrus.MMDBTests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		366F5FED1F052F7F00DE3883 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "MMDBTests/Info-iOS.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lexrus.MMDBTests-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_VERSION = 3.0;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		366F5FFC1F05301400DE3883 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "MMDBTests/Info-OSX.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lexrus.MMDBTests-OSX";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		366F5FFD1F05301400DE3883 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "MMDBTests/Info-OSX.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lexrus.MMDBTests-OSX";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		D716CB341C21432C00D89B5C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -576,6 +789,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		366F5FEE1F052F7F00DE3883 /* Build configuration list for PBXNativeTarget "MMDBTests-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				366F5FEC1F052F7F00DE3883 /* Debug */,
+				366F5FED1F052F7F00DE3883 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		366F5FFB1F05301400DE3883 /* Build configuration list for PBXNativeTarget "MMDBTests-OSX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				366F5FFC1F05301400DE3883 /* Debug */,
+				366F5FFD1F05301400DE3883 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		D716CB2A1C21432C00D89B5C /* Build configuration list for PBXProject "MMDB" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

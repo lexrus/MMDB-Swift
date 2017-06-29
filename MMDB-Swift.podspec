@@ -22,15 +22,13 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/lexrus/MMDB-Swift.git",
                      :tag => s.version }
 
-  s.source_files  = "Sources/MMDB.swift", "MMDB/maxminddb*.{h,c}"
-  s.public_header_files = "MMDB/maxminddb*.h", "MMDB-iOS/MMDB.h"
+  s.source_files  = "MMDB/MMDB.swift", "MMDB/maxminddb*.{h,c}"
+  s.ios.public_header_files = "MMDB/maxminddb*.h", "MMDB-iOS/MMDB.h"
+  s.osx.public_header_files = "MMDB/maxminddb*.h", "MMDB-OSX/MMDB.h"
 
+  s.prepare_command = "./update_database.sh"
   s.resource  = "MMDB/GeoLite2-Country.mmdb"
 
   s.framework  = "Foundation"
   s.requires_arc = true
-
-  s.pod_target_xcconfig = {
-    'GCC_PREPROCESSOR_DEFINITIONS' => 'MMDB_UINT128_IS_BYTE_ARRAY'
-  }
 end
