@@ -184,6 +184,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D716CB4C1C23A58700D89B5C /* Build configuration list for PBXNativeTarget "MMDB-iOS" */;
 			buildPhases = (
+				366F5FDD1F05152C00DE3883 /* ShellScript */,
 				D716CB421C23A58700D89B5C /* Sources */,
 				D716CB431C23A58700D89B5C /* Frameworks */,
 				D716CB441C23A58700D89B5C /* Headers */,
@@ -202,6 +203,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D716CB591C23A5DC00D89B5C /* Build configuration list for PBXNativeTarget "MMDB-OSX" */;
 			buildPhases = (
+				366F5FDE1F0515CD00DE3883 /* ShellScript */,
 				D716CB4F1C23A5DC00D89B5C /* Sources */,
 				D716CB501C23A5DC00D89B5C /* Frameworks */,
 				D716CB511C23A5DC00D89B5C /* Headers */,
@@ -277,6 +279,35 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		366F5FDD1F05152C00DE3883 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 8;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+			shellPath = /bin/sh;
+			shellScript = "if [ ! -f $SRCROOT/MMDB/GeoLite2-Country.mmdb ] || [ $CONFIGURATION == \"Release\" ]; then\n  $SRCROOT/update_database.sh\nfi";
+		};
+		366F5FDE1F0515CD00DE3883 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 12;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if [ ! -f $SRCROOT/MMDB/GeoLite2-Country.mmdb ] || [ $CONFIGURATION == \"Release\" ]; then\n  $SRCROOT/update_database.sh\nfi";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		D716CB2B1C21432C00D89B5C /* Sources */ = {

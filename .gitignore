@@ -124,3 +124,6 @@ Temporary Items
 # Debug files
 *.dSYM/
 
+
+# Ignore database file
+MMDB/GeoLite2-Country.mmdb
