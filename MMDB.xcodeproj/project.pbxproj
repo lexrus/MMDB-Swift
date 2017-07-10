@@ -398,14 +398,14 @@
 /* Begin PBXShellScriptBuildPhase section */
 		366F5FDD1F05152C00DE3883 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 8;
+			buildActionMask = 12;
 			files = (
 			);
 			inputPaths = (
 			);
 			outputPaths = (
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "if [ ! -f $SRCROOT/MMDB/GeoLite2-Country.mmdb ] || [ $CONFIGURATION == \"Release\" ]; then\n  $SRCROOT/update_database.sh\nfi";
 		};
