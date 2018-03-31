@@ -183,46 +183,8 @@ final public class MMDB {
         return nil
     }
 
-    fileprivate func lookupJSON(_ s: String) -> String? {
-        guard let result = lookupString(s) else {
-            return nil
-        }
-
-        var entry = result.entry
-        var list: ListPtr?
-
-        let status = MMDB_get_entry_data_list(&entry, &list)
-        if status != MMDB_SUCCESS {
-            return nil
-        }
-
-        var JSONString = ""
-        _ = dumpList(list, toS: &JSONString)
-
-        JSONString = JSONString.replacingOccurrences(
-            of: "},},},",
-            with: "}}}"
-        )
-
-        MMDB_free_entry_data_list(list)
-
-        return JSONString
-    }
-
     public func lookup(_ IPString: String) -> MMDBCountry? {
-        guard let s = lookupJSON(IPString) else {
-            return nil
-        }
-
-        guard let data = s.data(using: String.Encoding.utf8) else {
-            return nil
-        }
-
-        let JSON = try? JSONSerialization.jsonObject(
-            with: data,
-            options: JSONSerialization.ReadingOptions.allowFragments)
-
-        guard let dict = JSON as? NSDictionary else {
+        guard let dict = lookup(ip: IPString) else {
             return nil
         }
 
