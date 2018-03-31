@@ -230,6 +230,71 @@ final public class MMDB {
 
         return country
     }
+    
+    private func dump(list: ListPtr?) -> (ptr: ListPtr?, out: Any?) {
+        var list = list
+        switch getType(list!) {
+            
+        case MMDB_DATA_TYPE_MAP:
+            var dict = NSMutableDictionary()
+            
+            var size = getSize(list!)
+            
+            list = list?.pointee.next
+            while size > 0 && list != nil {
+                let key = getString(list!)
+                list = list?.pointee.next
+                let sub = dump(list: list)
+                list = sub.ptr
+                if let out = sub.out, key.count > 0 {
+                    dict[key] = sub.out
+                } else {
+                    break
+                }
+                size -= 1
+            }
+            return (ptr: list, out: dict)
+            
+        case MMDB_DATA_TYPE_UTF8_STRING:
+            let str = getString(list!)
+            list = list?.pointee.next
+            return (ptr: list, out: str)
+            
+        case MMDB_DATA_TYPE_UINT32:
+            var res: NSNumber = 0
+            if let entryData = list?.pointee.entry_data {
+                var mutableEntryData = entryData
+                if let uint = MMDB_get_entry_data_uint32(&mutableEntryData) {
+                    let v: UInt32 = uint.pointee
+                    res = NSNumber(value: v)
+                }
+            }
+            list = list?.pointee.next
+            return (ptr: list, out: res)
+            
+        default: ()
+            
+        }
+        return (ptr: list, out: nil)
+    }
+    
+    public func lookup(ip: String) -> NSDictionary? {
+        guard let result = lookupString(ip) else {
+            return nil
+        }
+        
+        var entry = result.entry
+        var list: ListPtr?
+        let status = MMDB_get_entry_data_list(&entry, &list)
+        if status != MMDB_SUCCESS {
+            return nil
+        }
+        let res = self.dump(list: list)
+        if let dict = res.out, let d = dict as? NSDictionary {
+            return d
+        }
+        return nil
+    }
 
     deinit {
         MMDB_close(&db)
