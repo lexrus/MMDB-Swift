@@ -108,7 +108,6 @@ final public class MMDB {
         return nil
     }
 
-
     fileprivate func getString(_ list: ListPtr) -> String {
         var data = list.pointee.entry_data
         let type = (Int32)(data.type)
@@ -136,52 +135,6 @@ final public class MMDB {
         return list.pointee.entry_data.data_size
     }
 
-    private func dumpList(_ list: ListPtr?, toS: StringPtr) -> ListPtr? {
-        var list = list
-        switch getType(list!) {
-
-        case MMDB_DATA_TYPE_MAP:
-            toS.pointee += "{\n"
-            var size = getSize(list!)
-
-            list = list?.pointee.next
-            while size != 0 && list != nil {
-                toS.pointee += "\"" + getString(list!) + "\":"
-
-                list = list?.pointee.next
-                list = dumpList(list, toS: toS)
-                size -= 1
-            }
-            toS.pointee += "},"
-            break
-
-        case MMDB_DATA_TYPE_UTF8_STRING:
-            toS.pointee += "\"" + getString(list!) + "\","
-            list = list?.pointee.next
-            break
-
-        case MMDB_DATA_TYPE_UINT32:
-            if let entryData = list?.pointee.entry_data {
-                var mutableEntryData = entryData
-                if let uint = MMDB_get_entry_data_uint32(&mutableEntryData) {
-                toS.pointee += String(
-                    format: "%u",
-                    uint
-                    ) + ","
-                }
-            }
-            list = list?.pointee.next
-            break
-
-        default: ()
-
-        }
-        
-        if let list = list {
-            return list
-        }
-        return nil
-    }
 
     public func lookup(_ IPString: String) -> MMDBCountry? {
         guard let dict = lookup(ip: IPString) else {
@@ -199,7 +152,6 @@ final public class MMDB {
             
         case MMDB_DATA_TYPE_MAP:
             var dict = NSMutableDictionary()
-            
             var size = getSize(list!)
             
             list = list?.pointee.next
@@ -209,7 +161,7 @@ final public class MMDB {
                 let sub = dump(list: list)
                 list = sub.ptr
                 if let out = sub.out, key.count > 0 {
-                    dict[key] = sub.out
+                    dict[key] = out
                 } else {
                     break
                 }
