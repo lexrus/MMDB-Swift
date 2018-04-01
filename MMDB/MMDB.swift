@@ -108,7 +108,6 @@ final public class MMDB {
         return nil
     }
 
-
     fileprivate func getString(_ list: ListPtr) -> String {
         var data = list.pointee.entry_data
         let type = (Int32)(data.type)
@@ -136,99 +135,79 @@ final public class MMDB {
         return list.pointee.entry_data.data_size
     }
 
-    private func dumpList(_ list: ListPtr?, toS: StringPtr) -> ListPtr? {
-        var list = list
-        switch getType(list!) {
-
-        case MMDB_DATA_TYPE_MAP:
-            toS.pointee += "{\n"
-            var size = getSize(list!)
-
-            list = list?.pointee.next
-            while size != 0 && list != nil {
-                toS.pointee += "\"" + getString(list!) + "\":"
-
-                list = list?.pointee.next
-                list = dumpList(list, toS: toS)
-                size -= 1
-            }
-            toS.pointee += "},"
-            break
-
-        case MMDB_DATA_TYPE_UTF8_STRING:
-            toS.pointee += "\"" + getString(list!) + "\","
-            list = list?.pointee.next
-            break
-
-        case MMDB_DATA_TYPE_UINT32:
-            if let entryData = list?.pointee.entry_data {
-                var mutableEntryData = entryData
-                if let uint = MMDB_get_entry_data_uint32(&mutableEntryData) {
-                toS.pointee += String(
-                    format: "%u",
-                    uint
-                    ) + ","
-                }
-            }
-            list = list?.pointee.next
-            break
-
-        default: ()
-
-        }
-        
-        if let list = list {
-            return list
-        }
-        return nil
-    }
-
-    fileprivate func lookupJSON(_ s: String) -> String? {
-        guard let result = lookupString(s) else {
-            return nil
-        }
-
-        var entry = result.entry
-        var list: ListPtr?
-
-        let status = MMDB_get_entry_data_list(&entry, &list)
-        if status != MMDB_SUCCESS {
-            return nil
-        }
-
-        var JSONString = ""
-        _ = dumpList(list, toS: &JSONString)
-
-        JSONString = JSONString.replacingOccurrences(
-            of: "},},},",
-            with: "}}}"
-        )
-
-        MMDB_free_entry_data_list(list)
-
-        return JSONString
-    }
 
     public func lookup(_ IPString: String) -> MMDBCountry? {
-        guard let s = lookupJSON(IPString) else {
-            return nil
-        }
-
-        guard let data = s.data(using: String.Encoding.utf8) else {
-            return nil
-        }
-
-        let JSON = try? JSONSerialization.jsonObject(
-            with: data,
-            options: JSONSerialization.ReadingOptions.allowFragments)
-
-        guard let dict = JSON as? NSDictionary else {
+        guard let dict = lookup(ip: IPString) else {
             return nil
         }
 
         let country = MMDBCountry(dictionary: dict)
 
         return country
+    }
+    
+    private func dump(list: ListPtr?) -> (ptr: ListPtr?, out: Any?) {
+        var list = list
+        switch getType(list!) {
+            
+        case MMDB_DATA_TYPE_MAP:
+            var dict = NSMutableDictionary()
+            var size = getSize(list!)
+            
+            list = list?.pointee.next
+            while size > 0 && list != nil {
+                let key = getString(list!)
+                list = list?.pointee.next
+                let sub = dump(list: list)
+                list = sub.ptr
+                if let out = sub.out, key.count > 0 {
+                    dict[key] = out
+                } else {
+                    break
+                }
+                size -= 1
+            }
+            return (ptr: list, out: dict)
+            
+        case MMDB_DATA_TYPE_UTF8_STRING:
+            let str = getString(list!)
+            list = list?.pointee.next
+            return (ptr: list, out: str)
+            
+        case MMDB_DATA_TYPE_UINT32:
+            var res: NSNumber = 0
+            if let entryData = list?.pointee.entry_data {
+                var mutableEntryData = entryData
+                if let uint = MMDB_get_entry_data_uint32(&mutableEntryData) {
+                    let v: UInt32 = uint.pointee
+                    res = NSNumber(value: v)
+                }
+            }
+            list = list?.pointee.next
+            return (ptr: list, out: res)
+            
+        default: ()
+            
+        }
+        return (ptr: list, out: nil)
+    }
+    
+    public func lookup(ip: String) -> NSDictionary? {
+        guard let result = lookupString(ip) else {
+            return nil
+        }
+        
+        var entry = result.entry
+        var list: ListPtr?
+        let status = MMDB_get_entry_data_list(&entry, &list)
+        if status != MMDB_SUCCESS {
+            return nil
+        }
+        let res = self.dump(list: list)
+        if let dict = res.out, let d = dict as? NSDictionary {
+            return d
+        }
+        return nil
     }
 
     deinit {
