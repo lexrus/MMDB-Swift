@@ -7,7 +7,7 @@ echo "Updating GeoIP database."
 tmpfile=$(mktemp)
 tmpdir=$(mktemp -d)
 
-curl -o $tmpfile http://geolite.maxmind.com/download/geoip/database/GeoLite2-Country.tar.gz
+curl -L -o $tmpfile http://geolite.maxmind.com/download/geoip/database/GeoLite2-Country.tar.gz
 
 tar -xzf $tmpfile -C $tmpdir
 
