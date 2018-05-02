@@ -39,17 +39,20 @@ Run `carthage update` to build the frameworks and drag the built `MMDB.framework
 
 ## Swift Package Manager
 
-Install [Swift Package Manager](https://swift.org/package-manager/). Edit your Package.swift file:
+Package.swift
 
 ``` swift
 import PackageDescription
 
 let package = Package(
-	name: "YOUR_AWESOME_PROJECT",
-    targets: [],
-    dependencies: [
-  		.Package(url: "https://github.com/lexrus/MMDB-Swift", versions: "0.0.1" ..< Version.max)
-	]
+          name: "YOUR_AWESOME_PROJECT",
+       targets: [],
+  dependencies: [
+                  .Package(
+                    url: "https://github.com/lexrus/MMDB-Swift",
+               versions: "0.0.1" ..< Version.max
+                  )
+                ]
 )
 ```
 
@@ -101,15 +104,15 @@ Notice that country is a struct defined as:
 
 ``` swift
 public struct MMDBContinent {
-    var code: String?
-    var names: [String: String]?
+  var code: String?
+  var names: [String: String]?
 }
 
 public struct MMDBCountry: CustomStringConvertible {
-    var continent = MMDBContinent()
-    var isoCode = ""
-    var names = [String: String]()
-    ...
+  var continent = MMDBContinent()
+  var isoCode = ""
+  var names = [String: String]()
+  ...
 }
 ```
 
