@@ -151,7 +151,7 @@ final public class MMDB {
         switch getType(list!) {
             
         case MMDB_DATA_TYPE_MAP:
-            var dict = NSMutableDictionary()
+            let dict = NSMutableDictionary()
             var size = getSize(list!)
             
             list = list?.pointee.next

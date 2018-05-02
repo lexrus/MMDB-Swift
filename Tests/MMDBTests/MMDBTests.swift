@@ -8,8 +8,13 @@ class MMDBTests: XCTestCase {
         super.setUp()
         database = MMDB()
     }
-    
+
     func testExample() {
         XCTAssertEqual(database.lookup("202.108.22.220")?.isoCode, "CN")
+    }
+
+    func testCloudFlare() {
+        let cloudflareDNS = database.lookup("1.1.1.1")
+        XCTAssertNotNil(cloudflareDNS)
     }
 }
