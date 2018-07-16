@@ -29,6 +29,10 @@
 		D736A9881C23B7E30070EAA3 /* maxminddb_unions.h in Headers */ = {isa = PBXBuildFile; fileRef = D716CB401C2269D200D89B5C /* maxminddb_unions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D736A98A1C23DD190070EAA3 /* MMDB.h in Headers */ = {isa = PBXBuildFile; fileRef = D736A9891C23DD190070EAA3 /* MMDB.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D736A98B1C23DD280070EAA3 /* MMDB.h in Headers */ = {isa = PBXBuildFile; fileRef = D736A9891C23DD190070EAA3 /* MMDB.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F734B36820FC9AB1004D1033 /* data-pool.h in Headers */ = {isa = PBXBuildFile; fileRef = F734B36620FC9AB0004D1033 /* data-pool.h */; };
+		F734B36920FC9AB1004D1033 /* data-pool.h in Headers */ = {isa = PBXBuildFile; fileRef = F734B36620FC9AB0004D1033 /* data-pool.h */; };
+		F734B36A20FC9AB1004D1033 /* data-pool.c in Sources */ = {isa = PBXBuildFile; fileRef = F734B36720FC9AB0004D1033 /* data-pool.c */; };
+		F734B36B20FC9AB1004D1033 /* data-pool.c in Sources */ = {isa = PBXBuildFile; fileRef = F734B36720FC9AB0004D1033 /* data-pool.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +74,8 @@
 		D77179AE1EF800B300E25F23 /* MMDB-Swift.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = "MMDB-Swift.podspec"; sourceTree = "<group>"; };
 		D77179AF1EF800B300E25F23 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		D77179B01EF800B300E25F23 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		F734B36620FC9AB0004D1033 /* data-pool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "data-pool.h"; sourceTree = "<group>"; };
+		F734B36720FC9AB0004D1033 /* data-pool.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "data-pool.c"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +157,8 @@
 				D73CAECE1C21A7B0000C2132 /* maxminddb_config.h */,
 				D716CB3F1C2269D200D89B5C /* maxminddb_unions.c */,
 				D716CB401C2269D200D89B5C /* maxminddb_unions.h */,
+				F734B36720FC9AB0004D1033 /* data-pool.c */,
+				F734B36620FC9AB0004D1033 /* data-pool.h */,
 			);
 			name = libmaxminddb;
 			path = Sources/libmaxminddb;
@@ -178,6 +186,7 @@
 				D736A9811C23B7D40070EAA3 /* maxminddb_config.h in Headers */,
 				D736A9821C23B7D40070EAA3 /* maxminddb-compat-util.h in Headers */,
 				D736A9831C23B7D40070EAA3 /* maxminddb.h in Headers */,
+				F734B36820FC9AB1004D1033 /* data-pool.h in Headers */,
 				D736A9841C23B7D40070EAA3 /* maxminddb_unions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -190,6 +199,7 @@
 				D736A9851C23B7E30070EAA3 /* maxminddb_config.h in Headers */,
 				D736A9861C23B7E30070EAA3 /* maxminddb-compat-util.h in Headers */,
 				D736A9871C23B7E30070EAA3 /* maxminddb.h in Headers */,
+				F734B36920FC9AB1004D1033 /* data-pool.h in Headers */,
 				D736A9881C23B7E30070EAA3 /* maxminddb_unions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -404,6 +414,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D716CB5E1C23A65D00D89B5C /* MMDB.swift in Sources */,
+				F734B36A20FC9AB1004D1033 /* data-pool.c in Sources */,
 				D716CB5C1C23A65200D89B5C /* maxminddb.c in Sources */,
 				D716CB5D1C23A65200D89B5C /* maxminddb_unions.c in Sources */,
 			);
@@ -414,6 +425,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D716CB5F1C23A66C00D89B5C /* MMDB.swift in Sources */,
+				F734B36B20FC9AB1004D1033 /* data-pool.c in Sources */,
 				D716CB601C23A66C00D89B5C /* maxminddb.c in Sources */,
 				D716CB611C23A66C00D89B5C /* maxminddb_unions.c in Sources */,
 			);

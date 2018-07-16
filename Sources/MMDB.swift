@@ -196,9 +196,13 @@ final public class MMDB {
         guard let result = lookupString(ip) else {
             return nil
         }
-        
         var entry = result.entry
         var list: ListPtr?
+        defer {
+            if let list = list {
+                MMDB_free_entry_data_list(list);
+            }
+        }
         let status = MMDB_get_entry_data_list(&entry, &list)
         if status != MMDB_SUCCESS {
             return nil
@@ -213,5 +217,4 @@ final public class MMDB {
     deinit {
         MMDB_close(&db)
     }
-
 }
