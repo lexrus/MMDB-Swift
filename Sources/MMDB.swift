@@ -204,6 +204,7 @@ final public class MMDB {
             return nil
         }
         let res = self.dump(list: list)
+        MMDB_free_entry_data_list(list)
         if let dict = res.out, let d = dict as? NSDictionary {
             return d
         }
