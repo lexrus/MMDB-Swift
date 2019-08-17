@@ -29,6 +29,10 @@
 		D736A9881C23B7E30070EAA3 /* maxminddb_unions.h in Headers */ = {isa = PBXBuildFile; fileRef = D716CB401C2269D200D89B5C /* maxminddb_unions.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D736A98A1C23DD190070EAA3 /* MMDB.h in Headers */ = {isa = PBXBuildFile; fileRef = D736A9891C23DD190070EAA3 /* MMDB.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D736A98B1C23DD280070EAA3 /* MMDB.h in Headers */ = {isa = PBXBuildFile; fileRef = D736A9891C23DD190070EAA3 /* MMDB.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D7999FEE2307B8B4003EB8CC /* data-pool.h in Headers */ = {isa = PBXBuildFile; fileRef = D7999FEC2307B8B4003EB8CC /* data-pool.h */; };
+		D7999FEF2307B8B4003EB8CC /* data-pool.h in Headers */ = {isa = PBXBuildFile; fileRef = D7999FEC2307B8B4003EB8CC /* data-pool.h */; };
+		D7999FF02307B8B4003EB8CC /* data-pool.c in Sources */ = {isa = PBXBuildFile; fileRef = D7999FED2307B8B4003EB8CC /* data-pool.c */; };
+		D7999FF12307B8B4003EB8CC /* data-pool.c in Sources */ = {isa = PBXBuildFile; fileRef = D7999FED2307B8B4003EB8CC /* data-pool.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -70,6 +74,11 @@
 		D77179AE1EF800B300E25F23 /* MMDB-Swift.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = "MMDB-Swift.podspec"; sourceTree = "<group>"; };
 		D77179AF1EF800B300E25F23 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		D77179B01EF800B300E25F23 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D7999FEC2307B8B4003EB8CC /* data-pool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "data-pool.h"; sourceTree = "<group>"; };
+		D7999FED2307B8B4003EB8CC /* data-pool.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "data-pool.c"; sourceTree = "<group>"; };
+		D7999FF22307B9D7003EB8CC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D7999FF32307B9D8003EB8CC /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		D7999FF42307B9D8003EB8CC /* MMDB-Swift.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = "MMDB-Swift.podspec"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +129,9 @@
 		D716CB261C21432C00D89B5C = {
 			isa = PBXGroup;
 			children = (
+				D7999FF22307B9D7003EB8CC /* README.md */,
+				D7999FF42307B9D8003EB8CC /* MMDB-Swift.podspec */,
+				D7999FF32307B9D8003EB8CC /* Package.swift */,
 				D7C937F0209A79CA007F77C5 /* MMDB-Swift */,
 				D716CB311C21432C00D89B5C /* libmaxminddb */,
 				366F5FE51F052F7F00DE3883 /* MMDBTests */,
@@ -151,6 +163,8 @@
 				D73CAECE1C21A7B0000C2132 /* maxminddb_config.h */,
 				D716CB3F1C2269D200D89B5C /* maxminddb_unions.c */,
 				D716CB401C2269D200D89B5C /* maxminddb_unions.h */,
+				D7999FED2307B8B4003EB8CC /* data-pool.c */,
+				D7999FEC2307B8B4003EB8CC /* data-pool.h */,
 			);
 			name = libmaxminddb;
 			path = Sources/libmaxminddb;
@@ -179,6 +193,7 @@
 				D736A9811C23B7D40070EAA3 /* maxminddb_config.h in Headers */,
 				D736A9821C23B7D40070EAA3 /* maxminddb-compat-util.h in Headers */,
 				D736A9831C23B7D40070EAA3 /* maxminddb.h in Headers */,
+				D7999FEE2307B8B4003EB8CC /* data-pool.h in Headers */,
 				D736A9841C23B7D40070EAA3 /* maxminddb_unions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -191,6 +206,7 @@
 				D736A9851C23B7E30070EAA3 /* maxminddb_config.h in Headers */,
 				D736A9861C23B7E30070EAA3 /* maxminddb-compat-util.h in Headers */,
 				D736A9871C23B7E30070EAA3 /* maxminddb.h in Headers */,
+				D7999FEF2307B8B4003EB8CC /* data-pool.h in Headers */,
 				D736A9881C23B7E30070EAA3 /* maxminddb_unions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,7 +295,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0830;
-				LastUpgradeCheck = 0930;
+				LastUpgradeCheck = 1030;
 				ORGANIZATIONNAME = lexrus.com;
 				TargetAttributes = {
 					366F5FE31F052F7F00DE3883 = {
@@ -303,10 +319,11 @@
 			};
 			buildConfigurationList = D716CB2A1C21432C00D89B5C /* Build configuration list for PBXProject "MMDB" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = D716CB261C21432C00D89B5C;
 			productRefGroup = D716CB301C21432C00D89B5C /* Products */;
@@ -405,6 +422,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D716CB5E1C23A65D00D89B5C /* MMDB.swift in Sources */,
+				D7999FF02307B8B4003EB8CC /* data-pool.c in Sources */,
 				D716CB5C1C23A65200D89B5C /* maxminddb.c in Sources */,
 				D716CB5D1C23A65200D89B5C /* maxminddb_unions.c in Sources */,
 			);
@@ -415,6 +433,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D716CB5F1C23A66C00D89B5C /* MMDB.swift in Sources */,
+				D7999FF12307B8B4003EB8CC /* data-pool.c in Sources */,
 				D716CB601C23A66C00D89B5C /* maxminddb.c in Sources */,
 				D716CB611C23A66C00D89B5C /* maxminddb_unions.c in Sources */,
 			);
@@ -507,6 +526,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -555,7 +575,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
@@ -563,6 +583,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
@@ -604,7 +625,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = macosx;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 5.0;
 			};
 			name = Release;
 		};
@@ -628,7 +649,6 @@
 				PRODUCT_NAME = MMDB;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
@@ -655,7 +675,6 @@
 				PRODUCT_NAME = MMDB;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				SWIFT_SWIFT3_OBJC_INFERENCE = On;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
