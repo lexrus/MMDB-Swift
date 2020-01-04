@@ -11,14 +11,14 @@
 		366F5FE91F052F7F00DE3883 /* MMDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D716CB471C23A58700D89B5C /* MMDB.framework */; };
 		366F5FF81F05301400DE3883 /* MMDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D716CB541C23A5DC00D89B5C /* MMDB.framework */; };
 		366F5FFE1F05302300DE3883 /* MMDBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 366F5FE61F052F7F00DE3883 /* MMDBTests.swift */; };
+		36D1827B23C0688C002E42A5 /* GeoLite2-Country.mmdb in Resources */ = {isa = PBXBuildFile; fileRef = D73CAED01C21AA9A000C2132 /* GeoLite2-Country.mmdb */; };
+		36D1827C23C0688D002E42A5 /* GeoLite2-Country.mmdb in Resources */ = {isa = PBXBuildFile; fileRef = D73CAED01C21AA9A000C2132 /* GeoLite2-Country.mmdb */; };
 		D716CB5C1C23A65200D89B5C /* maxminddb.c in Sources */ = {isa = PBXBuildFile; fileRef = D73CAECC1C21A7A2000C2132 /* maxminddb.c */; };
 		D716CB5D1C23A65200D89B5C /* maxminddb_unions.c in Sources */ = {isa = PBXBuildFile; fileRef = D716CB3F1C2269D200D89B5C /* maxminddb_unions.c */; };
 		D716CB5E1C23A65D00D89B5C /* MMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = D716CB321C21432C00D89B5C /* MMDB.swift */; };
 		D716CB5F1C23A66C00D89B5C /* MMDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = D716CB321C21432C00D89B5C /* MMDB.swift */; };
 		D716CB601C23A66C00D89B5C /* maxminddb.c in Sources */ = {isa = PBXBuildFile; fileRef = D73CAECC1C21A7A2000C2132 /* maxminddb.c */; };
 		D716CB611C23A66C00D89B5C /* maxminddb_unions.c in Sources */ = {isa = PBXBuildFile; fileRef = D716CB3F1C2269D200D89B5C /* maxminddb_unions.c */; };
-		D736A97E1C23B59D0070EAA3 /* GeoLite2-Country.mmdb in Resources */ = {isa = PBXBuildFile; fileRef = D73CAED01C21AA9A000C2132 /* GeoLite2-Country.mmdb */; };
-		D736A97F1C23B59F0070EAA3 /* GeoLite2-Country.mmdb in Resources */ = {isa = PBXBuildFile; fileRef = D73CAED01C21AA9A000C2132 /* GeoLite2-Country.mmdb */; };
 		D736A9811C23B7D40070EAA3 /* maxminddb_config.h in Headers */ = {isa = PBXBuildFile; fileRef = D73CAECE1C21A7B0000C2132 /* maxminddb_config.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D736A9821C23B7D40070EAA3 /* maxminddb-compat-util.h in Headers */ = {isa = PBXBuildFile; fileRef = D73CAED11C21AAEA000C2132 /* maxminddb-compat-util.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D736A9831C23B7D40070EAA3 /* maxminddb.h in Headers */ = {isa = PBXBuildFile; fileRef = D73CAECF1C21A7B0000C2132 /* maxminddb.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -71,9 +71,6 @@
 		D73CAECF1C21A7B0000C2132 /* maxminddb.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = maxminddb.h; sourceTree = "<group>"; };
 		D73CAED01C21AA9A000C2132 /* GeoLite2-Country.mmdb */ = {isa = PBXFileReference; lastKnownFileType = file; path = "GeoLite2-Country.mmdb"; sourceTree = "<group>"; };
 		D73CAED11C21AAEA000C2132 /* maxminddb-compat-util.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "maxminddb-compat-util.h"; sourceTree = "<group>"; };
-		D77179AE1EF800B300E25F23 /* MMDB-Swift.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = "MMDB-Swift.podspec"; sourceTree = "<group>"; };
-		D77179AF1EF800B300E25F23 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
-		D77179B01EF800B300E25F23 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D7999FEC2307B8B4003EB8CC /* data-pool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "data-pool.h"; sourceTree = "<group>"; };
 		D7999FED2307B8B4003EB8CC /* data-pool.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = "data-pool.c"; sourceTree = "<group>"; };
 		D7999FF22307B9D7003EB8CC /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -118,6 +115,7 @@
 		366F5FE51F052F7F00DE3883 /* MMDBTests */ = {
 			isa = PBXGroup;
 			children = (
+				D73CAED01C21AA9A000C2132 /* GeoLite2-Country.mmdb */,
 				366F5FF71F05301400DE3883 /* Info-OSX.plist */,
 				366F5FE81F052F7F00DE3883 /* Info-iOS.plist */,
 				366F5FE61F052F7F00DE3883 /* MMDBTests.swift */,
@@ -136,9 +134,6 @@
 				D716CB311C21432C00D89B5C /* libmaxminddb */,
 				366F5FE51F052F7F00DE3883 /* MMDBTests */,
 				D716CB301C21432C00D89B5C /* Products */,
-				D77179AE1EF800B300E25F23 /* MMDB-Swift.podspec */,
-				D77179AF1EF800B300E25F23 /* Package.swift */,
-				D77179B01EF800B300E25F23 /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -156,7 +151,6 @@
 		D716CB311C21432C00D89B5C /* libmaxminddb */ = {
 			isa = PBXGroup;
 			children = (
-				D73CAED01C21AA9A000C2132 /* GeoLite2-Country.mmdb */,
 				D73CAED11C21AAEA000C2132 /* maxminddb-compat-util.h */,
 				D73CAECC1C21A7A2000C2132 /* maxminddb.c */,
 				D73CAECF1C21A7B0000C2132 /* maxminddb.h */,
@@ -254,7 +248,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D716CB4C1C23A58700D89B5C /* Build configuration list for PBXNativeTarget "MMDB-iOS" */;
 			buildPhases = (
-				366F5FDD1F05152C00DE3883 /* ShellScript */,
 				D716CB421C23A58700D89B5C /* Sources */,
 				D716CB431C23A58700D89B5C /* Frameworks */,
 				D716CB441C23A58700D89B5C /* Headers */,
@@ -273,7 +266,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D716CB591C23A5DC00D89B5C /* Build configuration list for PBXNativeTarget "MMDB-OSX" */;
 			buildPhases = (
-				366F5FDE1F0515CD00DE3883 /* ShellScript */,
 				D716CB4F1C23A5DC00D89B5C /* Sources */,
 				D716CB501C23A5DC00D89B5C /* Frameworks */,
 				D716CB511C23A5DC00D89B5C /* Headers */,
@@ -343,6 +335,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36D1827B23C0688C002E42A5 /* GeoLite2-Country.mmdb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,6 +343,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36D1827C23C0688D002E42A5 /* GeoLite2-Country.mmdb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,7 +351,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D736A97E1C23B59D0070EAA3 /* GeoLite2-Country.mmdb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -365,40 +358,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D736A97F1C23B59F0070EAA3 /* GeoLite2-Country.mmdb in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		366F5FDD1F05152C00DE3883 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if [ ! -f $SRCROOT/Sources/libmaxminddb/GeoLite2-Country.mmdb ] || [ $CONFIGURATION == \"Release\" ]; then\n  $SRCROOT/update_database.sh\nfi";
-		};
-		366F5FDE1F0515CD00DE3883 /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
-			files = (
-			);
-			inputPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "if [ ! -f $SRCROOT/MMDB/GeoLite2-Country.mmdb ] || [ $CONFIGURATION == \"Release\" ]; then\n  $SRCROOT/update_database.sh\nfi";
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		366F5FE01F052F7F00DE3883 /* Sources */ = {

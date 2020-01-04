@@ -9,7 +9,9 @@
 
 A tiny wrapper for [libmaxminddb](https://github.com/maxmind/libmaxminddb) which allows you to lookup Geo data by IP address.
 
-This product includes [GeoLite2 data](http://dev.maxmind.com/geoip/geoip2/geolite2/) created by MaxMind, available from [http://www.maxmind.com](http://www.maxmind.com).
+---
+
+**NOTE** From `v0.5.0`, MMDB-Swift no longer bundles [GeoLite2 database](http://dev.maxmind.com/geoip/geoip2/geolite2/) due to the license change. Developers should download the binary version from the [Maxmind website](http://dev.maxmind.com/geoip/geoip2/geolite2/).
 
 ## CocoaPods
 
@@ -60,7 +62,7 @@ let package = Package(
 ## Usage
 
 ``` swift
-guard let db = MMDB() else {
+guard let db = MMDB("PATH_TO_THE_DATABASE") else {
   print("Failed to open DB.")
   return
 }

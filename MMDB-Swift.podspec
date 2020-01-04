@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "MMDB-Swift"
-  s.version      = "0.4.0"
+  s.version      = "0.5.0"
   s.summary      = "A wrapper for MaxMind DB"
   s.description  = <<-DESC
                    A tiny wrapper for libmaxminddb which allows you to lookup
@@ -26,9 +26,6 @@ Pod::Spec.new do |s|
   s.source_files  = "Sources/MMDB.swift", "Sources/libmaxminddb/*.{h,c}"
   s.ios.public_header_files = "Sources/libmaxminddb/*.h", "Sources/MMDB.h"
   s.osx.public_header_files = "Sources/libmaxminddb/*.h", "Sources/MMDB.h"
-
-  s.prepare_command = "./update_database.sh"
-  s.resource  = "Sources/libmaxminddb/GeoLite2-Country.mmdb"
 
   s.framework  = "Foundation"
   s.requires_arc = true

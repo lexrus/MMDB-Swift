@@ -74,11 +74,8 @@ final public class MMDB {
     fileprivate typealias ListPtr = UnsafeMutablePointer<MMDB_entry_data_list_s>
     fileprivate typealias StringPtr = UnsafeMutablePointer<String>
 
-    public init?(_ filename: String? = nil) {
-        if let filename = filename, openDB(atPath: filename) { return }
-
-        let path = Bundle(for: MMDB.self).path(forResource: "GeoLite2-Country", ofType: "mmdb")
-        if let path = path, openDB(atPath: path) { return }
+    public init?(_ filename: String) {
+        if openDB(atPath: filename) { return }
 
         return nil
     }
