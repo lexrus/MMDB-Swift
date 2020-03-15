@@ -127,3 +127,4 @@ Temporary Items
 
 # Ignore database file
 MMDB/GeoLite2-Country.mmdb
+Tests/MMDBTests/GeoLite2-Country.mmdb
