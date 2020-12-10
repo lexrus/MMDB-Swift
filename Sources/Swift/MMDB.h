@@ -19,3 +19,5 @@ FOUNDATION_EXPORT const unsigned char MMDBVersionString[];
 #import <MMDB/maxminddb.h>
 #import <MMDB/maxminddb-compat-util.h>
 #import <MMDB/maxminddb_unions.h>
+#import <MMDB/maxminddb_config.h>
+#import <MMDB/data-pool.h>
